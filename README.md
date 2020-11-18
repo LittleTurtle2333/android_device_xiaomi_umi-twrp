@@ -55,7 +55,7 @@ mkdir -p twrp&&cd twrp
 同步Twrp的omni最小Tree:
 ```
 repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
-repo sync -j$(nproc --all)
+repo sync -j$(nproc --all) # $(nproc --all)为线程数，推荐8
 ```
 
 添加这个项目到 .repo/manifest.xml:
