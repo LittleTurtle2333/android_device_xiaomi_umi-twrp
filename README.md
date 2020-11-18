@@ -55,7 +55,7 @@ mkdir -p twrp&&cd twrp
 同步Twrp的omni最小Tree:
 ```
 repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
-repo sync -j8
+repo sync -j$(nproc --all)
 ```
 
 添加这个项目到 .repo/manifest.xml:
@@ -72,7 +72,7 @@ repo sync --force-sync device/xiaomi/umi
 开始编译:
 ```
 . build/envsetup.sh
-lunch omni_cmi-eng
+lunch omni_umi-eng
 mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
 ```
 
